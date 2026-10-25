@@ -12,3 +12,11 @@ npm run dev
 ```
 
 Built with React, Vite, Tailwind CSS, and lucide-react. Deployed to GitHub Pages via GitHub Actions on every push to `main`.
+
+## Contributing
+
+Issues and pull requests are welcome. Fork the repo, create a branch, and open a PR against `main`.
+
+## License
+
+[MIT](LICENSE) © Omer Rahmany

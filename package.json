@@ -1,7 +1,17 @@
 {
   "name": "network-topology",
-  "private": true,
   "version": "0.1.0",
+  "description": "Interactive explorer: OSI stack, ISP last-mile, cloud topology, and Okta/OIDC SSO flow",
+  "license": "MIT",
+  "author": "Omer Rahmany",
+  "homepage": "https://omer-rahmany.github.io/network-topology/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Omer-Rahmany/network-topology.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Omer-Rahmany/network-topology/issues"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -23,5 +33,6 @@
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^7.0.2",
     "vite": "^8.3.5"
-  }
+  },
+  "private": true
 }
