@@ -22,14 +22,30 @@ npm run build    # same check CI runs
 
 ## Where things live
 
-All content and UI are in [`src/App.tsx`](src/App.tsx):
+Content is plain data, separate from the UI. Most contributions only touch `src/data/`:
 
-- `OSI_LAYERS`: the OSI stack tab (snippets, NAT tables, explanations)
-- `ISP_NODES`: the ISP & last-mile topology
-- `CLOUD_NODES`: the cloud topology
-- `ID_STEPS`: the Okta / OIDC SSO flow
+| File | Tab | What's in it |
+| --- | --- | --- |
+| [`src/data/osi.ts`](src/data/osi.ts) | OSI Stack | Per layer: examples, header-field table, deep dive, CLI commands, risks, troubleshooting |
+| [`src/data/packet.ts`](src/data/packet.ts) | Packet Anatomy | Encapsulation layers with byte counts, MTU/MSS scenarios |
+| [`src/data/isp.ts`](src/data/isp.ts) | ISP & Last Mile | Hops from your computer to the app's edge |
+| [`src/data/cloud.ts`](src/data/cloud.ts) | Cloud Topology | DNS, edge/WAF, ALB, Kubernetes, mesh, app, STS/DB |
+| [`src/data/identity.ts`](src/data/identity.ts) | Identity & SSO | OIDC steps with sequence-diagram messages, HTTP examples, checks |
+| [`src/data/timeline.ts`](src/data/timeline.ts) | Request Timeline | Latency phases per scenario, reference numbers, takeaways |
 
-Adding a node or layer is usually just adding an entry to one of these arrays. Icons come from [lucide-react](https://lucide.dev/icons/).
+The shapes are defined in [`src/types.ts`](src/types.ts), so TypeScript tells you if a field is missing. Views live in `src/views/`, shared components in `src/components/ui.tsx`, and colors in `src/theme.ts` (use a `tone` name like `'sky'` rather than raw Tailwind classes).
+
+Icons come from [lucide-react](https://lucide.dev/icons/).
+
+### Keep the example consistent
+
+All tabs follow the same request, so numbers should agree across files:
+
+- Your Computer `192.168.1.50`, home router WAN `203.0.113.5`, app edge `104.16.123.96` (Frankfurt, 12 ms RTT)
+- Origin in us-east-1, ~80 ms RTT from the edge, app pod `10.0.5.22:8443`
+- Server time 24 ms, of which the DB query is 12.4 ms
+
+Use documentation IP ranges (`192.0.2.0/24`, `198.51.100.0/24`, `203.0.113.0/24`, `2001:db8::/32`), documentation ASNs (64496-64511), and `EXAMPLE` placeholders for IDs and keys. Never put real credentials or tokens in examples.
 
 ## Guidelines
 
