@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { 
   Server, Globe, Lock, FileText, Wifi, Network, Laptop, Cloud, Layers, 
   Hexagon, Box, Database, ArrowRight, ChevronRight, Terminal, RefreshCw, 
-  ShieldCheck, Zap, Activity, Cable, Router, Radio, ArrowLeftRight, UserCheck, Key, Shield
+  ShieldCheck, Zap, Activity, Cable, Router, Radio, ArrowLeftRight, UserCheck, Key, Shield, GitPullRequest
 } from 'lucide-react';
 
 // --- OSI MODEL DATA ---
@@ -272,6 +272,14 @@ export default function App() {
               <tab.icon className="w-4 h-4"/> {tab.label}
             </button>
           ))}
+          <a
+            href="https://github.com/Omer-Rahmany/network-topology"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 rounded-md text-[12px] font-bold transition-all flex items-center gap-2 text-sky-400 hover:text-sky-300 hover:bg-slate-800/50"
+          >
+            <GitPullRequest className="w-4 h-4"/> Contribute
+          </a>
         </div>
       </header>
 
