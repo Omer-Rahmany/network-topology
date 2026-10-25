@@ -15,7 +15,7 @@ Built with React, Vite, Tailwind CSS, and lucide-react. Deployed to GitHub Pages
 
 ## Contributing
 
-Issues and pull requests are welcome. Fork the repo, create a branch, and open a PR against `main`.
+Issues and pull requests are welcome. Merged PRs deploy to the live site automatically. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
